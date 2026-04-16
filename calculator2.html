@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ul li{
+            list-style-type: none;
+        }
+      
+
+    </style>
+</head>
+<body>
+    <script>
+        var num1,num2,sum,diff,pro,quot,rem;
+        num1=Number(prompt("enter number one"));
+          num2=Number(prompt("enter number two"));
+          sum = num1 + num2;
+          diff = num1 - num2;
+          pro = num1 * num2;
+          quotient = num1 / num2;
+          rem=num1%num2;
+          document.getElementById("li1").innerHTML="sum"+ sum;
+          document.getElementById("li2").innerHTML="diff"+ diff;
+          document.getElementById("li3").innerHTML="pro"+ pro;
+          document.getElementById("li4").innerHTML="quot"+ quot;
+          document.getElementById("li5").innerHTML="rem"+ rem;
+
+    </script>
+    <ul class="ul">
+        <li id="li1">result 1</li>
+        <li id="li2">result 2</li>
+        <li id="li3">result 3</li>
+        <li id="li4">result 4</li>
+        <li id="li5">result 5</li>
+    </ul>
+</body>
+</html>
