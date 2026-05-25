@@ -1,53 +1,89 @@
-.ul li{
-        float: right;
-        list-style-type: none;
-        padding-left: 10px;
-
-    }
-    .ul2 li{
-        list-style-type: none;
-        padding-left: 10px;
-    }
-    .container {
-        display: grid;
-        justify-content: stretch;
-        align-content: stretch;
-        align-items: stretch;
-        justify-items: stretch;
-        height: 100vh;
-        grid-template-columns: 10% 90%;
-        grid-template-rows: 1fr 6fr 1fr;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
     
-    img{
-    border: 2px solid black;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
 }
+
+.container{
+    display:grid;
+    min-height:100vh;
+    grid-template-columns:200px 1fr;
+    grid-template-rows:120px 1fr 60px;
+}
+
 .nav-bar{
-     background-color: black;
-     color: aliceblue;
-     grid-column: span 2;
-     float: right;
-     
-     
-    
+    grid-column:span 2;
+    background:linear-gradient(90deg,#0f2027,#434120,#645e2c);
+    display:flex;
+    align-items:center;
+    padding:20px;
 }
+
+.images{
+    display:flex;
+    align-items:center;
+}
+
+img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border:2px solid black;
+    margin-right:15px;
+}
+
+h1{
+    color:yellow;
+    font-size:24px;
+}
+
+.ul{
+    margin-left:auto;
+}
+
+.ul li{
+    display:inline-block;
+    list-style:none;
+    margin-left:20px;
+}
+
+.ul li a{
+    text-decoration:none;
+    color:white;
+}
+
 .side-bar{
-background-color: rgb(247, 209, 164);
-
-
-
-
+    background:rgb(247,209,164);
+    padding-top:20px;
 }
+
+.ul2 li{
+    list-style:none;
+    padding:15px 20px;
+    border-bottom:1px solid rgba(0,0,0,0.2);
+}
+
+.ul2 li a{
+    text-decoration:none;
+    color:black;
+}
+
+.ul2 li:hover{
+    background:rgba(0,0,0,0.1);
+    border-left:4px solid #2c5364;
+}
+
 .center{
-    background-color: yellow;
-    
-    
-    
+    background:yellow;
+    padding:20px;
 }
-.footer {
-            background-color: black;
-            grid-column: span 2;
-        }
+
+.footer{
+    grid-column:span 2;
+    background:black;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
