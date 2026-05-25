@@ -1,89 +1,290 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #0f2027;
+    --green: #434120;
+    --green-dark: #645e2c;
+    --paper: #f7d1a4;
+    --paper-dark: #f0c38e;
+    --red: yellow;
+    --white: #ffffff;
+    --muted: #333333;
+    --border: rgba(0, 0, 0, 0.15);
+
     
 }
 
-.container{
-    display:grid;
-    min-height:100vh;
-    grid-template-columns:200px 1fr;
-    grid-template-rows:120px 1fr 60px;
+/* Layout */
+.container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 210px 1fr;
+    grid-template-rows: 68px 1fr 52px;
 }
 
-.nav-bar{
-    grid-column:span 2;
-    background:linear-gradient(90deg,#0f2027,#434120,#645e2c);
-    display:flex;
-    align-items:center;
-    padding:20px;
+/* Navbar */
+.nav-bar {
+    grid-column: span 2;
+    background: linear-gradient(90deg, #0f2027, #434120, #645e2c);
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    gap: 18px;
+    border-bottom: 2px solid var(--red);
 }
 
-.images{
-    display:flex;
-    align-items:center;
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
 }
 
-img{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    border:2px solid black;
-    margin-right:15px;
+img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid black;
+    object-fit: cover;
 }
 
-h1{
-    color:yellow;
-    font-size:24px;
+.nav-title {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 }
 
-.ul{
-    margin-left:auto;
+h1 {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--red);
 }
 
-.ul li{
-    display:inline-block;
-    list-style:none;
-    margin-left:20px;
+.nav-subtitle {
+    font-size: 9px;
+    font-weight: 300;
+    color: var(--white);
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
-.ul li a{
-    text-decoration:none;
-    color:white;
+.ul {
+    display: flex;
+    list-style: none;
+    gap: 2px;
 }
 
-.side-bar{
-    background:rgb(247,209,164);
-    padding-top:20px;
+.nav-link {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--white);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
 }
 
-.ul2 li{
-    list-style:none;
-    padding:15px 20px;
-    border-bottom:1px solid rgba(0,0,0,0.2);
+.nav-link:hover {
+    color: var(--red);
+    border-color: var(--red);
 }
 
-.ul2 li a{
-    text-decoration:none;
-    color:black;
+.nav-cta {
+    border-color: var(--red) !important;
+    color: var(--red) !important;
+    margin-left: 8px;
 }
 
-.ul2 li:hover{
-    background:rgba(0,0,0,0.1);
-    border-left:4px solid #2c5364;
+.nav-cta:hover {
+    background-color: var(--red) !important;
+    color: var(--black) !important;
 }
 
-.center{
-    background:yellow;
-    padding:20px;
+/* Sidebar */
+.side-bar {
+    background-color: var(--paper);
+    padding-top: 32px;
+    animation: fadeUp 0.45s ease 0.08s both;
 }
 
-.footer{
-    grid-column:span 2;
-    background:black;
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.sidebar-label {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--green);
+    padding: 0 24px 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 6px;
+}
+
+.ul2 {
+    list-style: none;
+}
+
+.ul2 li a {
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+    text-decoration: none;
+    color: var(--black);
+    padding: 14px 24px;
+    border-left: 2px solid transparent;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+.num {
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--green-dark);
+    flex-shrink: 0;
+}
+
+.link-text {
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.ul2 li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-left-color: var(--black);
+}
+
+.ul2 li a:hover .num {
+    color: var(--black);
+}
+
+/* Main content */
+.center {
+    background-color: yellow;
+    padding: 60px 56px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    animation: fadeUp 0.55s ease both;
+}
+
+.welcome-block {
+    max-width: 580px;
+}
+
+.overline {
+    display: block;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+.center h2 {
+    font-family: var(--serif);
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--black);
+    margin-bottom: 24px;
+}
+
+.center h2 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--green);
+}
+
+.divider {
+    width: 48px;
+    height: 2px;
+    background-color: var(--black);
+    margin-bottom: 22px;
+}
+
+.body-text {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.85;
+    max-width: 440px;
+}
+
+/* Info strip */
+.info-strip {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid var(--border);
+    background-color: var(--paper-dark);
+    max-width: 560px;
+    animation: fadeUp 0.55s ease 0.18s both;
+}
+
+.strip-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 22px 24px;
+}
+
+.strip-label {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--black);
+}
+
+.strip-desc {
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--muted);
+}
+
+.strip-divider {
+    width: 1px;
+    background-color: var(--border);
+}
+
+/* Footer */
+.footer {
+    grid-column: span 2;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+}
+
+.footer-copy {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #cccccc;
+    text-transform: uppercase;
+}
+
+.footer-ul {
+    gap: 0;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: white;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    transition: color 0.2s;
+}
+
+.footer-link:hover {
+    color: yellow;
 }
